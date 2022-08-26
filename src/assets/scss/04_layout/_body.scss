@@ -1,7 +1,8 @@
 body {
-    background: #ffffff !important;
+    background: $color-white-pure !important;
     height: 100vh !important;
     margin: 0 !important;
     min-width: 300px !important;
-    font-family: Helvetica, Arial, Sans-Serif;
+    font-family: $font-family !important;
+    font-size: $font-size !important;
 }
