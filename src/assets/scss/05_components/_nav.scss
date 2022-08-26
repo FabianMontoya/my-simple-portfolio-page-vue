@@ -1,5 +1,7 @@
 .nav {
-    @apply flex flex-row ;
+    @apply flex flex-row;
+    cursor: pointer;
+
     &-tabs {
         @apply flex-row gap-10 h-full;
 
@@ -14,14 +16,14 @@
         a {
             text-decoration: none;
             color: $color-gray-dark;
-        }        
+        }
     }
 
     .active {
         background: $color-primary;
         margin: 0;
         color: $color-white-pure;
-        
+
         a {
             color: $color-white-pure;
         }

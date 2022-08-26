@@ -4,6 +4,7 @@ import { useStore } from '@/store';
 
 import BaseButton from '@/components/BaseButton.vue';
 import PrincipalLander from '@/components/PrincipalLander.vue';
+import Navigator from '@/components/Navigator.vue';
 
 const store = useStore();
 
@@ -22,9 +23,12 @@ onMounted(() => {
         <BaseButton variant="text">a</BaseButton>
         <BaseButton variant="text">b</BaseButton>
       </section>
-      <BaseButton variant="primary" disabled>primary</BaseButton>
-      <BaseButton variant="secondary" disabled>secondary</BaseButton>
-      <BaseButton variant="text" class="mt-10">a</BaseButton>
+      <section class="w-full flex items-center justify-center mt-5">
+        <Navigator></Navigator>
+      </section>
+      <section class="w-full flex items-center justify-center mt-10">
+        <BaseButton variant="primary" disabled>Show Me More</BaseButton>
+      </section>
     </article>
   </article>
 </template>
