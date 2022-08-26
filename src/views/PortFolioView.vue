@@ -26,6 +26,7 @@ onMounted(() => {
       <section class="w-full flex items-center justify-center mt-5">
         <Navigator></Navigator>
       </section>
+      <section class="w-full flex items-center justify-center mt-5">cards</section>
       <section class="w-full flex items-center justify-center mt-10">
         <BaseButton variant="primary" disabled>Show Me More</BaseButton>
       </section>

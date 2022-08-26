@@ -10,10 +10,11 @@ const isPhone = computed(() => mq.current === 'phone');
 <template>
   <header class="h-20 flex flex-row justify-between items-center px-10">
     <span>LOGO</span>
-    <Navigator
-      ><li class="nav-item">
+    <Navigator v-if="!isPhone">
+      <li class="nav-item">
         <a href="#">Q</a>
-      </li></Navigator
-    >
+      </li>
+    </Navigator>
+    <div v-else>Menu</div>
   </header>
 </template>

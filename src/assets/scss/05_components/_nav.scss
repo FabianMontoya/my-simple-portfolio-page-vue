@@ -1,21 +1,26 @@
 .nav {
     @apply flex flex-row;
+
     cursor: pointer;
+
+    a {
+        text-decoration: none;
+        color: $color-gray-dark;
+    }
 
     &-tabs {
         @apply flex-row gap-10 h-full;
 
         &--mobile {
-            @apply flex-col gap-8;
+            @apply flex-col gap-5;
         }
-    }
+    }    
 
     &-item {
         @apply flex min-w-[5rem] h-full items-center justify-center;
 
-        a {
-            text-decoration: none;
-            color: $color-gray-dark;
+        &--mobile {
+            @apply flex items-center justify-center h-10;
         }
     }
 

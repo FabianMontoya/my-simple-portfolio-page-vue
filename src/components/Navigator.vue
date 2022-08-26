@@ -34,9 +34,17 @@ const items = ref([
 ]);
 </script>
 <template>
-  <nav class="h-11 flex items-center">
+  <nav class="flex items-center" :class="[isPhone ? 'h-full' : 'h-11']">
     <ul class="nav" :class="[isPhone ? 'nav-tabs--mobile' : 'nav-tabs']">
-      <li v-for="(item, i) in items" :key="i" class="nav-item" :class="{ active: item.isActive }">
+      <li
+        v-for="(item, i) in items"
+        :key="i"
+        :class="{
+          active: item.isActive,
+          'nav-item': !isPhone,
+          'nav-item--mobile': isPhone
+        }"
+      >
         <a :href="item.to">{{ item.name }}</a>
       </li>
       <slot></slot>
