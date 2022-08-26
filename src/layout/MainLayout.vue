@@ -6,7 +6,7 @@ const mq = useMq();
 const isPhone = computed(() => mq.current === 'phone');
 </script>
 <template>
-  <main class="h-full flex flex-col justify-between">
+  <main class="flex flex-col justify-between">
     <header class="h-20 flex flex-row justify-between items-center px-10">
       <span>LOGO</span>
       <nav class="h-11 flex items-center">

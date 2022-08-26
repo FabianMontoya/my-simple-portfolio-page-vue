@@ -1,0 +1,38 @@
+.baseButton {
+    cursor: pointer;
+    border: none;    
+    padding: 0.93em 1.87em;
+    
+    &:disabled {
+      cursor: not-allowed;
+    }
+
+    &--primary {      
+      background: $color-primary;
+      color: $color-white-pure;
+
+      &:disabled {
+        background: $color-primary-disabled;
+      }
+    }
+
+    &--secondary {      
+      background: $color-white-pure;
+      color: $color-primary;
+
+      &:disabled {
+        background: $color-gray;
+        color: $color-primary-disabled;
+      }
+    }
+
+    &--text {      
+      background: transparent;
+      color: $color-primary;
+
+      &:disabled {
+        color: $color-primary-disabled;
+      }
+    }
+
+  }
