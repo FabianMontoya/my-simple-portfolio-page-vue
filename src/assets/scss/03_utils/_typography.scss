@@ -1,2 +1,13 @@
-$font-family: Helvetica, Arial, Sans-Serif;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Questrial&display=swap');
+$font-family: "Montserrat", sans-serif;
 $font-size: 16px;
+
+.text {
+    &--primary {
+        color: $color-primary;
+    }
+
+    &--muted {
+        color: $color-muted;
+    }
+}

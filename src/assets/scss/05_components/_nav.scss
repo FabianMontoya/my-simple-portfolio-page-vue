@@ -1,0 +1,29 @@
+.nav {
+    @apply flex flex-row ;
+    &-tabs {
+        @apply flex-row gap-10 h-full;
+
+        &--mobile {
+            @apply flex-col gap-8;
+        }
+    }
+
+    &-item {
+        @apply flex min-w-[5rem] h-full items-center justify-center;
+
+        a {
+            text-decoration: none;
+            color: $color-gray-dark;
+        }        
+    }
+
+    .active {
+        background: $color-primary;
+        margin: 0;
+        color: $color-white-pure;
+        
+        a {
+            color: $color-white-pure;
+        }
+    }
+}
