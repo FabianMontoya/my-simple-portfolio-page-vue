@@ -11,11 +11,13 @@ const store = useStore();
 
 const isLoading = computed(() => store.state.photosAlbum.isLoading);
 
+const albumId = ref(1);
 const kindShow = ref('even');
+const cardsDistribution = ref('grid');
+
 const photosAlbum = computed(() =>
   kindShow.value === 'even' ? store.getters['photosAlbum/getEvenImages'] : store.getters['photosAlbum/getOddImages']
 );
-const albumId = ref(1);
 const loadPhotosFromAlbum = () => store.dispatch('photosAlbum/loadPhotosFromAlbum', albumId.value);
 
 onMounted(() => {
@@ -26,8 +28,6 @@ const nextAlbum = (increment: number) => {
   albumId.value = albumId.value + increment;
   loadPhotosFromAlbum();
 };
-
-const cardsDistribution = ref('grid');
 </script>
 <template>
   <article class="w-full">
@@ -61,7 +61,7 @@ const cardsDistribution = ref('grid');
           </div>
           <div
             class="mt-5 flex w-full justify-center gap-4"
-            :class="[cardsDistribution == 'grid' ? 'flex-wrap items-start' : 'flex-col items-center']"
+            :class="[cardsDistribution === 'grid' ? 'flex-wrap items-start' : 'flex-col items-center']"
           >
             <ImageCard v-for="(img, i) in photosAlbum" :key="i" :src="img.url" :imageId="img.id" :title="img.title"></ImageCard>
           </div>
