@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const emit = defineEmits(['onClose', 'submit']);
+const emit = defineEmits(['onClose']);
 
 const onClose = () => emit('onClose');
 </script>
