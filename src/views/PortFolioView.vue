@@ -26,14 +26,16 @@ const nextAlbum = (increment: number) => {
   albumId.value = albumId.value + increment;
   loadPhotosFromAlbum();
 };
+
+const cardsDistribution = ref('grid');
 </script>
 <template>
   <article class="w-full">
     <PrincipalLander></PrincipalLander>
     <article class="mt-5 w-full">
       <section class="w-full flex items-center justify-center">
-        <BaseButton variant="text">a</BaseButton>
-        <BaseButton variant="text">b</BaseButton>
+        <BaseButton :variant="cardsDistribution === 'grid' ? 'primary' : 'secondary'" @click="cardsDistribution = 'grid'">a</BaseButton>
+        <BaseButton :variant="cardsDistribution === 'list' ? 'primary' : 'secondary'" @click="cardsDistribution = 'list'">b</BaseButton>
       </section>
       <section class="w-full flex items-center justify-center mt-5">
         <Navigator></Navigator>
@@ -57,7 +59,10 @@ const nextAlbum = (increment: number) => {
             <BaseButton :variant="kindShow === 'even' ? 'primary' : 'secondary'" @click="kindShow = 'even'">Show even</BaseButton>
             <BaseButton :variant="kindShow === 'odd' ? 'primary' : 'secondary'" @click="kindShow = 'odd'">Show odd</BaseButton>
           </div>
-          <div class="mt-5 flex w-full flex-wrap items-start justify-center gap-4">
+          <div
+            class="mt-5 flex w-full justify-center gap-4"
+            :class="[cardsDistribution == 'grid' ? 'flex-wrap items-start' : 'flex-col items-center']"
+          >
             <ImageCard v-for="(img, i) in photosAlbum" :key="i" :src="img.url" :imageId="img.id" :title="img.title"></ImageCard>
           </div>
         </div>
