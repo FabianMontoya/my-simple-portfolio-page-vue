@@ -26,18 +26,3 @@
     }
     
 }
-
-.right-drawer {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 50%; /* initially */
-    overflow: hidden;
-    height: 100vh;
-    padding-left: 10; /* initially */
-    border-left: 1px solid whitesmoke;
-    background: $color-white-pure;
-    z-index: 10;
-    transition: all 0.2s; /* for the animation */
-  }
-  
