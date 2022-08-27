@@ -1,0 +1,43 @@
+
+.drawer {
+    position: absolute;    
+    width: 50%; 
+    overflow: hidden;
+    height: 100vh;    
+    background: $color-white-pure;
+    z-index: 10;
+
+    &-mask {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100vw; 
+        height: 100vh;
+        background: #000;
+        opacity: 0.6;
+        z-index: 9;
+    }
+
+    &--right{
+        top: 0;
+        right: 0;
+        padding-left: 10; 
+        border-left: 1px solid whitesmoke;
+    }
+    
+}
+
+.right-drawer {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%; /* initially */
+    overflow: hidden;
+    height: 100vh;
+    padding-left: 10; /* initially */
+    border-left: 1px solid whitesmoke;
+    background: $color-white-pure;
+    z-index: 10;
+    transition: all 0.2s; /* for the animation */
+  }
+  

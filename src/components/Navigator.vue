@@ -34,7 +34,7 @@ const items = ref([
 ]);
 </script>
 <template>
-  <nav class="flex items-center" :class="[isPhone ? 'h-full' : 'h-11']">
+  <nav class="flex" :class="[isPhone ? 'justify-center h-full' : 'items-center h-11']">
     <ul class="nav" :class="[isPhone ? 'nav-tabs--mobile' : 'nav-tabs']">
       <li
         v-for="(item, i) in items"

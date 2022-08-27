@@ -34,8 +34,12 @@ const nextAlbum = (increment: number) => {
     <PrincipalLander></PrincipalLander>
     <article class="mt-5 w-full">
       <section class="w-full flex items-center justify-center">
-        <BaseButton :variant="cardsDistribution === 'grid' ? 'primary' : 'secondary'" @click="cardsDistribution = 'grid'">a</BaseButton>
-        <BaseButton :variant="cardsDistribution === 'list' ? 'primary' : 'secondary'" @click="cardsDistribution = 'list'">b</BaseButton>
+        <BaseButton :variant="cardsDistribution === 'grid' ? 'primary' : 'secondary'" @click="cardsDistribution = 'grid'">
+          <font-awesome-icon icon="fa-solid fa-grip" />
+        </BaseButton>
+        <BaseButton :variant="cardsDistribution === 'list' ? 'primary' : 'secondary'" @click="cardsDistribution = 'list'"
+          ><font-awesome-icon icon="fa-solid fa-grip-lines"
+        /></BaseButton>
       </section>
       <section class="w-full flex items-center justify-center mt-5">
         <Navigator></Navigator>
