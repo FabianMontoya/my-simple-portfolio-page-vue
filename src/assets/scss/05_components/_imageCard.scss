@@ -1,0 +1,9 @@
+.image-card {
+    background-color: $color-gray;
+
+    &--cover {
+        @apply p-2;
+        background-color: $color-primary;
+        color: $color-white-pure;
+    }
+}

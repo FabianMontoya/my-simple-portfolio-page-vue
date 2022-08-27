@@ -16,8 +16,12 @@ const photosAlbumModule: Module<PhotosAlbumState, State> = {
     albumId: 1,
     photosAlbum: null
   }),
+  getters: {
+    getEvenImages: (state) => (state.photosAlbum == null ? [] : state.photosAlbum.filter((img) => img.id % 2 == 0)),
+    getOddImages: (state) => (state.photosAlbum == null ? [] : state.photosAlbum.filter((img) => img.id % 2 != 0))
+  },
   mutations: {
-    setPhotosAlbum: (state, payload: PhotoAlbum[]) => {
+    setPhotosAlbum: (state, payload: PhotoAlbum[] | null) => {
       state.photosAlbum = payload;
     },
     setAlbumId: (state, payload: number) => {
@@ -33,12 +37,12 @@ const photosAlbumModule: Module<PhotosAlbumState, State> = {
 
       Promise.resolve(getPhotosFromAlbum(albumId))
         .then(async ({ data }) => {
-          console.log('loadPhotosFromAlbum', data);
           commit('setPhotosAlbum', data);
           commit('setAlbumId', albumId);
         })
         .catch((error) => {
           console.error('• Error getting photos from album: ', error);
+          commit('setPhotosAlbum', null);
         })
         .finally(() => commit('setIsLoading', false));
     },

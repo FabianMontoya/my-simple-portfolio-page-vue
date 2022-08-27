@@ -10,11 +10,11 @@ const props = defineProps({
 });
 
 const btnClass = computed(() => {
-  return `baseButton--${props.variant}`;
+  return `base-button--${props.variant}`;
 });
 </script>
 <template>
-  <button class="baseButton" :class="btnClass" v-bind="$attrs">
+  <button class="base-button" :class="btnClass" v-bind="$attrs">
     <slot />
   </button>
 </template>
